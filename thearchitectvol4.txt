@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Architect Vol. 4: Social Mastery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #334155;
+            font-family: 'Inter', sans-serif;
+            padding: 20px 0;
+            color: #1e293b;
+            margin: 0;
+        }
+        
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 100%;
+            min-height: auto; 
+            padding-bottom: 60px;
+            background-color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            body { padding: 40px 0; }
+            .page-container { gap: 40px; padding: 0; }
+            .page {
+                width: 210mm;
+                min-height: 297mm;
+                max-width: none;
+                padding-bottom: 0;
+            }
+        }
+
+        .bg-grid {
+            background-image: linear-gradient(#f1f5f9 1px, transparent 1px),
+            linear-gradient(90deg, #f1f5f9 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        h1, h2, h3, h4, .font-oswald { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+
+        .content-padding { padding: 1.5rem; }
+        @media (min-width: 768px) { .content-padding { padding: 3rem; } }
+
+        .section-break {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cyan-box {
+            background-color: #ecfeff;
+            border-left: 4px solid #06b6d4;
+            padding: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .slate-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid #334155;
+            padding: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .footer-logo {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 10px;
+            color: #cbd5e1;
+            letter-spacing: 2px;
+        }
+
+        p { margin-bottom: 1rem; line-height: 1.6; font-size: 0.95rem; text-align: justify; }
+        ul, ol { margin-bottom: 1rem; padding-left: 1.25rem; }
+        li { margin-bottom: 0.5rem; font-size: 0.95rem; line-height: 1.6; }
+        strong { color: #0f172a; font-weight: 700; }
+        .chapter-title { font-size: 2rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; color: #0f172a; }
+        @media (min-width: 768px) { .chapter-title { font-size: 2.5rem; } }
+        .sub-title { font-size: 1.25rem; font-weight: 600; color: #06b6d4; margin-bottom: 1rem; font-family: 'Oswald', sans-serif; }
+        
+        .technical-img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #cbd5e1;
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            background-color: #f8fafc;
+        }
+        
+        .img-caption {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+
+        <!-- ================= PAGE 1: COVER ================= -->
+        <div class="page bg-slate-900 text-white relative flex flex-col justify-between p-6 md:p-10 min-h-[500px] md:min-h-[297mm]">
+            <div class="absolute inset-0 bg-grid opacity-10"></div>
+            
+            <div class="z-10 flex justify-between items-start border-b border-slate-700 pb-4">
+                <div class="text-cyan-400 text-xs tracking-[0.2em] md:tracking-[0.4em] font-bold">PRIMETHEORY.LAB</div>
+                <div class="text-slate-500 text-[10px] text-right">PREMIUM EDITION<br>VOL. 04 - 2025</div>
+            </div>
+
+            <!-- VISUAL: COVER ART -->
+            <div class="z-10 flex-grow flex items-center justify-center my-8 md:my-0">
+                <img 
+                    src="assets/v4-cover.jpg" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x600/0f172a/06b6d4?text=FILE+NEEDED:+assets/v4-cover.jpg&font=oswald';"
+                    alt="Cover Art: Social Mastery" 
+                    class="rounded-full border-4 border-cyan-500/30 shadow-[0_0_50px_rgba(6,182,212,0.3)] max-w-[80%] md:max-w-[80%] object-cover aspect-square"
+                >
+            </div>
+
+            <div class="z-10 mb-10">
+                <h1 class="text-5xl md:text-[7rem] font-bold leading-none text-white tracking-tighter">THE<br><span class="text-cyan-500">ARCHITECT</span></h1>
+                <div class="flex items-center gap-4 mt-6">
+                    <div class="h-1 w-10 md:w-20 bg-white"></div>
+                    <h2 class="text-lg md:text-2xl text-slate-300 font-light tracking-widest">VOLUME 4: SOCIAL</h2>
+                </div>
+                <p class="text-slate-400 mt-4 text-sm max-w-sm">Social Mastery: Influence, Charisma & Status Signals.</p>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 2: TOC & LEGAL ================= -->
+        <div class="page bg-white content-padding">
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8 font-oswald">DAFTAR ISI VOL. 4</h2>
+                <ul class="space-y-4 font-oswald text-slate-700 text-sm md:text-base">
+                    <li class="flex justify-between border-b border-slate-200 pb-2"><span>1. PENDAHULUAN: The Invisible Rank</span> <span>03</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2"><span>2. CHAPTER 1: VOCAL ENGINEERING (SUARA)</span> <span>04</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2"><span>3. CHAPTER 2: NON-VERBAL ARCHITECTURE</span> <span>06</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2"><span>4. CHAPTER 3: THE EYE CONTACT PROTOCOL</span> <span>08</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2"><span>5. CHAPTER 4: OLFACTORY SCIENCE (PARFUM)</span> <span>10</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2"><span>6. CHAPTER 5: CONVERSATION ARCHITECTURE</span> <span>12</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2"><span>7. CHAPTER 6: SOCIAL CALIBRATION (BACA SITUASI)</span> <span>14</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2"><span>8. ACTION PLAN</span> <span>16</span></li>
+                </ul>
+            </div>
+            <div class="mt-auto text-xs text-slate-500">
+                <p class="font-bold mb-2">DISCLAIMER</p>
+                <p>Buku ini disusun berdasarkan teori psikologi sosial dan komunikasi. Tujuannya adalah pengembangan diri dan karisma, bukan untuk manipulasi negatif. Penulis tidak bertanggung jawab atas penyalahgunaan teknik ini.</p>
+                <p class="mt-4">&copy; 2025 PrimeTheory.Lab. All rights reserved.</p>
+            </div>
+            <div class="page-number">02</div>
+        </div>
+
+        <!-- ================= PAGE 3: PENDAHULUAN ================= -->
+        <div class="page bg-white content-padding bg-grid">
+            <h1 class="chapter-title">PENDAHULUAN:<br>THE INVISIBLE RANK</h1>
+            
+            <p>Di dunia ini ada hierarki yang gak kelihatan. Pas lo masuk ruangan rapat atau pesta, dalam 5 detik alam bawah sadar semua orang udah ngasih lo <strong>"Peringkat"</strong>.</p>
+            
+            <img 
+                src="assets/v4-intro.jpg" 
+                onerror="this.onerror=null; this.src='https://placehold.co/800x300/f8fafc/334155?text=FILE+NEEDED:+assets/v4-intro.jpg';"
+                alt="Social Hierarchy Pyramid Visual" 
+                class="technical-img"
+            >
+            <p class="img-caption">Fig 0.1: Hirarki Sosial & Sinyal Dominasi.</p>
+
+            <p>Pemimpin gak dipilih berdasarkan siapa yang paling baik hati. Pemimpin dipilih berdasarkan siapa yang memancarkan sinyal <strong>Kompetensi dan Ketenangan</strong>.</p>
+            <ul class="list-disc space-y-2 mb-6">
+                <li>Kalau lo ganteng tapi gelisah, lo dianggap "Ganteng tapi Aneh".</li>
+                <li>Kalau lo biasa aja tapi tenang, suara berat, dan natap mata orang dengan nyaman, lo dianggap "Bocah ini punya sesuatu".</li>
+            </ul>
+            
+            <div class="slate-box">
+                <p class="mb-0 text-sm">Volume ini adalah manual buat nge-hack sinyal-sinyal itu. Kita bakal ubah lo dari <em>Background Character (NPC)</em> jadi <em>Main Character</em>.</p>
+            </div>
+            
+            <div class="page-number">03</div>
+            <div class="footer-logo">THE ARCHITECT</div>
+        </div>
+
+        <!-- ================= PAGE 4: CHAPTER 1 (VOCAL) ================= -->
+        <div class="page bg-white content-padding">
+            <h1 class="chapter-title">CHAPTER 1:<br>VOCAL ENGINEERING</h1>
+            <p class="italic text-slate-500 mb-4">(Suara Lo Itu Testosteron yang Terdengar)</p>
+            <p>Riset membuktikan: CEO dengan suara berat (Deep Voice) mengelola perusahaan yang lebih besar dan gajinya lebih tinggi. Cewek secara biologis menilai suara berat sebagai indikator ukuran tubuh besar dan genetik kuat.</p>
+            
+            <h3 class="sub-title">1. Masalah: Suara Leher (Nasal)</h3>
+            <p>Kebanyakan cowok ngomong pake "Suara Hidung". Cempreng, tipis, cepet serak, dan nadanya tinggi kalau lagi panik. Ini suara anak kecil yang minta tolong.</p>
+
+            <h3 class="sub-title">2. Solusi: Suara Dada (Chest Resonance)</h3>
+            <p>Suara wibawa itu asalnya dari getaran di rongga dada.</p>
+            
+            <img 
+                src="assets/v4-vocal.jpg" 
+                onerror="this.onerror=null; this.src='https://placehold.co/800x300/f1f5f9/334155?text=FILE+NEEDED:+assets/v4-vocal.jpg';"
+                alt="Diaphragm Breathing & Chest Resonance" 
+                class="technical-img"
+            >
+            <p class="img-caption">Fig 1.1: Pernapasan Diafragma vs Dada.</p>
+
+            <div class="cyan-box">
+                <h4 class="font-bold text-cyan-900 mb-2 text-sm">LATIHAN: THE HUMMING DRILL</h4>
+                <p class="text-sm mb-2">Lakuin tiap pagi pas mandi (2 menit):</p>
+                <ol class="list-decimal pl-4 text-sm space-y-2">
+                    <li><strong>Postur:</strong> Berdiri tegak, bahu santai.</li>
+                    <li><strong>Napas:</strong> Tarik napas ke perut (Diafragma), bukan dada. Perut lo harus kembung, bahu jangan naik.</li>
+                    <li><strong>Humming:</strong> Tutup mulut rapet, keluarin suara dengungan "HMMMM...".</li>
+                    <li><strong>Target:</strong> Turunin nada (pitch) pelan-pelan sampe lo ngerasain getaran fisik di kulit dada bagian atas. Pegang dada lo pake telapak tangan. Kalau dada gak geter, suara lo masih di leher. Ulang lagi.</li>
+                    <li><strong>Open:</strong> Pas udah dapet geternya, buka mulut pelan jadi kata: "HMMM-MAAA... HMMM-MOOO...". Pertahanin getaran di dada itu pas ngomong biasa.</li>
+                </ol>
+            </div>
+
+            <div class="page-number">04</div>
+            <div class="footer-logo">THE ARCHITECT</div>
+        </div>
+
+        <!-- ================= PAGE 5: CHAPTER 1 (VOCAL CONT.) ================= -->
+        <div class="page bg-white content-padding">
+            <h3 class="sub-title">3. Intonasi: The Downward Inflection</h3>
+            <p>Cara lo ngakhiri kalimat nentuin status lo.</p>
+            <ul class="list-disc space-y-3 mb-6">
+                <li><strong>Nada Naik (Upward):</strong> "Nama gue Aditya?" (Ujung kalimat nadanya naik. Kedengeran kayak nanya/minta persetujuan. Lemah/Beta).</li>
+                <li><strong>Nada Turun (Downward):</strong> "Nama gue Aditya." (Ujung kalimat nadanya turun. Kedengeran kayak fakta mutlak. Dominan/Alpha).</li>
+                <li><strong>Challenge:</strong> Rekam suara lo pas ngenalin diri. Pastiin nada lo turun di akhir.</li>
+            </ul>
+
+            <h3 class="sub-title">4. Speed Control & The Power of Pause</h3>
+            <p>Orang penting gak buru-buru. Orang cemas ngomong cepet karena takut dipotong.</p>
+            <ul class="list-disc space-y-3">
+                <li><strong>Aturan:</strong> Ngomong 20% lebih lambat dari yang lo rasa wajar.</li>
+                <li><strong>Jeda (Pause):</strong> Jangan pake "Eee.. Uuu.." (Fillers) pas mikir. <strong>DIAM AJA.</strong> Jeda hening itu bikin orang nungguin kata-kata lo selanjutnya. Itu tanda kekuasaan.</li>
+            </ul>
+
+            <div class="page-number">05</div>
+            <div class="footer-logo">THE ARCHITECT</div>
+        </div>
+
+        <!-- ================= PAGE 6: CHAPTER 2 (NON-VERBAL) ================= -->
+        <div class="page bg-white content-padding">
+            <h1 class="chapter-title">CHAPTER 2:<br>NON-VERBAL ARCHITECTURE</h1>
+            <p>(Bahasa Tubuh Alpha)</p>
+
+            <img 
+                src="assets/v4-body-language.jpg" 
+                onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=FILE:+v4-body-language.jpg';" 
+                class="technical-img mb-6"
+            >
+
+            <h3 class="sub-title">1. Territoriality (Ambil Ruang Lo)</h3>
+            <p>Di dunia hewan, Alpha ngambil ruang paling banyak. Beta nyusutin diri biar gak kelihatan (takut diserang).</p>
+            <ul class="list-disc space-y-2 mb-6">
+                <li><strong>Duduk:</strong> Jangan rapetin kaki kayak anak gadis. Buka kaki selebar bahu. Sandaran penuh ke kursi. Taruh tangan di sandaran kursi atau meja (biarin ketiak lo agak kebuka, ini sinyal lo gak takut diserang vital-nya).</li>
+                <li><strong>Berdiri:</strong> Kaki selebar bahu. Jangan silangin kaki (posisi gak seimbang, gampang didorong).</li>
+            </ul>
+
+            <h3 class="sub-title">2. The Silverback Posture</h3>
+            <p>Bungkuk (Nerd Neck) bikin paru-paru lo keteken, hormon stres (kortisol) naik, dan testosteron turun. Lo kelihatan kayak udang.</p>
+            <p><strong>Koreksi:</strong> Puter bahu lo ke belakang dan ke bawah (Roll shoulders back and down). Busungin dada dikit. Bayangin ada tali yang narik ubun-ubun lo ke langit-langit.</p>
+
+            <div class="page-number">06</div>
+            <div class="footer-logo">THE ARCHITECT</div>
+        </div>
+
+        <!-- ================= PAGE 7: CHAPTER 2 (NON-VERBAL CONT.) ================= -->
+        <div class="page bg-white content-padding">
+            <h3 class="sub-title">3. Stillness: Seni Diam Total</h3>
+            <p>Tanda paling jelas kalau lo gugup adalah <strong>Micro-Fidgeting</strong> (Gerakan gelisah kecil).</p>
+            <ul class="list-disc pl-4 text-sm mb-4 bg-red-50 p-4 rounded border-l-4 border-red-500">
+                <li>Goyang-goyangin kaki (Jigging).</li>
+                <li>Megang muka/idung/rambut terus.</li>
+                <li>Mainin kunci mobil/cincin.</li>
+                <li>Cek HP padahal gak ada notif.</li>
+            </ul>
+            <p><strong>Protokol:</strong> Latih Stillness. Pas duduk, diem kayak patung batu. Cuma gerakin kepala atau tangan kalau perlu buat komunikasi. Diem itu mengintimidasi dalam artian positif. Itu tanda lo terkendali (In Control).</p>
+
+            <h3 class="sub-title mt-6">4. The Walk (Cara Jalan)</h3>
+            <p>Jalan jangan buru-buru kayak dikejar satpol PP. Jalan pelan, langkah lebar, bahu tegap. Tatap lurus ke depan, bukan ke lantai.</p>
+
+            <div class="section-break"></div>
+
+            <h1 class="chapter-title">CHAPTER 3:<br>THE EYE CONTACT PROTOCOL</h1>
+            <p>Mata adalah jendela ancaman dan ketertarikan. Siapa yang mutusin kontak mata duluan, biasanya dia yang "kalah" (secara bawah sadar).</p>
+
+            <div class="page-number">08</div>
+            <div class="footer-logo">THE ARCHITECT</div>
+        </div>
+
+        <!-- ================= PAGE 9: CHAPTER 3 (EYES) ================= -->
+        <div class="page bg-white content-padding">
+            <img 
+                src="assets/v4-eye-contact.jpg" 
+                onerror="this.onerror=null; this.src='https://placehold.co/800x300/f1f5f9/334155?text=FILE:+v4-eye-contact.jpg';" 
+                class="technical-img mb-6"
+            >
+            <p class="img-caption">Fig 3.1: The Triangle Gaze Technique.</p>
+
+            <h3 class="sub-title">The 70/50 Rule (Rasio Emas)</h3>
+            <p>Jangan melotot 100% (itu Creepy), jangan nunduk terus (itu Insecure).</p>
+            <ul class="list-disc space-y-2 mb-6">
+                <li><strong>70% Waktu:</strong> Tatap mata dia pas lo lagi <strong>Dengerin</strong>. (Ini tanda hormat dan perhatian penuh).</li>
+                <li><strong>50% Waktu:</strong> Tatap mata dia pas lo lagi <strong>Ngomong</strong>. (Liat ke arah lain/langit-langit dikit pas mikir itu wajar dan bikin lo kelihatan mikir beneran).</li>
+            </ul>
+
+            <h3 class="sub-title">The Triangle Gaze (Teknik Flirting)</h3>
+            <p>Kalau lagi kencan, natap dua mata terus-terusan bisa bikin cewek tegang (kayak diinterogasi).</p>
+            <ul class="list-disc space-y-2 mb-6">
+                <li><strong>Teknik:</strong> Pindahin fokus tatapan lo ngebentuk segitiga terbalik: Mata Kiri -> Mata Kanan -> Mulut -> Ulangi.</li>
+                <li><strong>Kenapa:</strong> Natap mulut sekilas ngirim sinyal bawah sadar soal ciuman/keintiman, tanpa lo harus ngomong jorok. Ini ngebangun tegangan seksual (Sexual Tension).</li>
+            </ul>
+
+            <h3 class="sub-title">Cara Mutus Tatapan (Breaking Contact)</h3>
+            <p>Pas interaksi selesai atau ada jeda:</p>
+            <ul class="list-disc space-y-2">
+                <li><strong>SALAH:</strong> Buang muka ke <strong>BAWAH</strong>. Ini sinyal tunduk (Submission) atau malu. Lo kalah frame.</li>
+                <li><strong>BENAR:</strong> Buang muka ke <strong>SAMPING</strong> (Lateral). Ini sinyal setara atau "gue lagi cek situasi sekitar", tapi gak tunduk.</li>
+            </ul>
+
+            <div class="page-number">09</div>
+            <div class="footer-logo">THE ARCHITECT</div>
+        </div>
+
+        <!-- ================= PAGE 10: CHAPTER 4 (PARFUM) ================= -->
+        <div class="page bg-white content-padding">
+            <h1 class="chapter-title">CHAPTER 4:<br>OLFACTORY SCIENCE (PARFUM)</h1>
+            <p>Wangi itu memori paling kuat. Lo bisa dilupain mukanya, tapi wangi lo bakal nempel di ingatan dia.</p>
+
+            <img 
+                src="assets/v4-parfum.jpg" 
+                onerror="this.onerror=null; this.src='https://placehold.co/800x400/f1f5f9/334155?text=FILE:+v4-parfum.jpg';" 
+                class="technical-img mb-6"
+            >
+
+            <h3 class="sub-title">Fragrance Wardrobe (Kapan Pake Apa?)</h3>
+            <p>Jangan pake satu parfum buat ke pasar sampe ke kondangan.</p>
+
+            <div class="space-y-4 mt-4">
+                <div class="bg-slate-50 p-4 border-l-4 border-cyan-500">
+                    <h4 class="font-bold text-slate-900">1. THE DAILY DRIVER (Blue/Fresh)</h4>
+                    <p class="text-sm mt-1">Wangi bersih, sabun, jeruk, laut.</p>
+                    <ul class="text-sm mt-2 list-disc pl-4">
+                        <li><strong>Kesan:</strong> Rapi, Energik, Profesional.</li>
+                        <li><strong>Kapan:</strong> Kantor, Gym, Siang panas, Nongkrong kasual.</li>
+                        <li><strong>Contoh:</strong> Dior Sauvage, Acqua di Gio, Bleu de Chanel.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-4 border-l-4 border-slate-500">
+                    <h4 class="font-bold text-slate-900">2. THE BOSS (Woody/Earthy)</h4>
+                    <p class="text-sm mt-1">Wangi kayu, tanah, akar wangi (vetiver).</p>
+                    <ul class="text-sm mt-2 list-disc pl-4">
+                        <li><strong>Kesan:</strong> Dewasa, Matang, Berwibawa, Kebapakan (Daddy vibes).</li>
+                        <li><strong>Kapan:</strong> Meeting Bisnis, Ketemu Calon Mertua, Acara Formal.</li>
+                        <li><strong>Contoh:</strong> Terre d'Hermes, Tom Ford Grey Vetiver.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-4 border-l-4 border-red-500">
+                    <h4 class="font-bold text-slate-900">3. THE DATE NIGHT (Sweet/Spicy)</h4>
+                    <p class="text-sm mt-1">Wangi manis, vanilla, kulit (leather), tembakau.</p>
+                    <ul class="text-sm mt-2 list-disc pl-4">
+                        <li><strong>Kesan:</strong> Misterius, Sexy, "Edible" (enak dimakan), Intim.</li>
+                        <li><strong>Kapan:</strong> Kencan malam, Clubbing, Kondangan malam.</li>
+                        <li><strong>Contoh:</strong> Versace Eros, Spicebomb Extreme, Jean Paul Gaultier Ultra Male.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="page-number">10</div>
+            <div class="footer-logo">THE ARCHITECT</div>
+        </div>
+
+        <!-- ================= PAGE 11: CHAPTER 4 (PARFUM CONT.) ================= -->
+        <div class="page bg-white content-padding">
+            <h3 class="sub-title">Protokol Semprot</h3>
+            <p>Jangan semprot di baju (cepet ilang kena angin). Semprot di Titik Nadi Panas:</p>
+            <ul class="list-disc space-y-2">
+                <li><strong>Belakang Telinga Kiri & Kanan:</strong> Biar kecium pas cipika-cipiki atau pas dia bisikin lo.</li>
+                <li><strong>Tengkuk Leher Belakang:</strong> Meninggalkan jejak wangi (Sillage) pas lo lewat.</li>
+            </ul>
+            <div class="bg-red-50 p-3 mt-4 border border-red-200">
+                <p class="text-red-700 font-bold text-sm m-0">JANGAN DIGOSOK!</p>
+                <p class="text-red-600 text-sm m-0">Habis semprot di tangan, jangan digosok! Gesekan mecah molekul Top Notes, bikin wanginya cepet ilang dan berubah baunya.</p>
+            </div>
+
+            <div class="section-break"></div>
+
+            <h1 class="chapter-title">CHAPTER 5:<br>CONVERSATION ARCHITECTURE</h1>
+            <p>Gimana cara ngobrol biar gak garing dan bikin orang tertarik?</p>
+
+            <img 
+                src="assets/v4-conversation.jpg" 
+                onerror="this.onerror=null; this.src='https://placehold.co/800x300/f1f5f9/334155?text=FILE:+v4-conversation.jpg';" 
+                class="technical-img mb-6"
+            >
+
+            <h3 class="sub-title">1. The Anti-Interview (Cold Reading)</h3>
+            <p>Jangan jadi wartawan yang nanya melulu ("Kerja di mana?", "Umur berapa?", "Tinggal di mana?"). Bosenin.</p>
+            <p><strong>Teknik:</strong> Ubah Pertanyaan jadi Pernyataan/Tebakan (Cold Read).</p>
+            <ul class="list-disc space-y-2">
+                <li><strong>Daripada Tanya:</strong> "Kamu kerja apa?"</li>
+                <li><strong>Mending Bilang:</strong> "Lo kelihatan kayak tipe orang yang kerja di dunia kreatif deh. Energinya dapet."</li>
+                <li><strong>Kalau bener:</strong> Dia kagum ("Kok tau sih?").</li>
+                <li><strong>Kalau salah:</strong> Dia bakal ngoreksi dengan semangat ("Salah! Gue akuntan, emang muka gue kayak seniman ya?").</li>
+            </ul>
+            <p class="mt-2 font-bold text-cyan-700">Result: Obrolan jadi seru dan emosional.</p>
+
+            <div class="page-number">12</div>
+            <div class="footer-logo">THE ARCHITECT</div>
+        </div>
+
+        <!-- ================= PAGE 12: CHAPTER 5 (CONVERSATION CONT.) ================= -->
+        <div class="page bg-white content-padding">
+            <h3 class="sub-title">2. Storytelling Structure</h3>
+            <p>Kalau cerita jangan datar. Pake struktur <strong>Hook - Conflict - Resolution</strong>.</p>
+            <ul class="list-disc space-y-4">
+                <li><strong>Salah:</strong> "Kemaren gue ke Bali, macet banget, terus gue makan nasi ayam, enak deh." (Datar).</li>
+                <li><strong>Benar:</strong> "Gila, kemaren gue hampir ketinggalan pesawat ke Bali (Hook). Jalanan macet total, gue lari-lari kayak orang gila di bandara (Conflict). Untungnya pas sampe sana, nasi ayam-nya ngebayar semua penderitaan gue (Resolution)."</li>
+            </ul>
+
+            <h3 class="sub-title mt-6">3. Active Listening</h3>
+            <p>Kebanyakan orang gak dengerin; mereka cuma nunggu giliran ngomong.</p>
+            <ul class="list-disc space-y-2">
+                <li><strong>Teknik:</strong> Dengerin buat Ngerti, bukan buat Jawab.</li>
+                <li><strong>Paraphrasing:</strong> Ulangi poin dia pake bahasa lo. "Oh, jadi maksud lo bos lo itu tipe yang micromanaging banget ya?" -> Ini bikin dia ngerasa dipahami banget (Deep Rapport).</li>
+            </ul>
+
+            <div class="page-number">13</div>
+            <div class="footer-logo">THE ARCHITECT</div>
+        </div>
+
+        <!-- ================= PAGE 13: CHAPTER 6 (SOCIAL CALIBRATION) ================= -->
+        <div class="page bg-white content-padding">
+            <h1 class="chapter-title">CHAPTER 6:<br>SOCIAL CALIBRATION</h1>
+            <p>(Baca Situasi)</p>
+            <p>Jangan jadi "Robot Alpha" yang kaku. Lo harus bisa baca situasi (Calibrated).</p>
+
+            <img 
+                src="assets/v4-social.jpg" 
+                onerror="this.onerror=null; this.src='https://placehold.co/800x300/f1f5f9/334155?text=FILE:+v4-social.jpg';" 
+                class="technical-img mb-6"
+            >
+
+            <h3 class="sub-title">High Energy vs Low Energy</h3>
+            <ul class="list-disc space-y-2 mb-6">
+                <li><strong>Klub/Pesta:</strong> Lo harus <strong>High Energy</strong>. Suara lebih keras, gerakan lebih lebar, senyum lebih banyak.</li>
+                <li><strong>Meeting/Dinner:</strong> Lo harus <strong>Low Energy</strong> (Tenang). Suara pelan dan berat, gerakan minim, tatapan tajam.</li>
+                <li><strong>Kunci:</strong> Sesuaikan level energi lo sedikit di atas rata-rata ruangan, tapi jangan kejauhan.</li>
+            </ul>
+
+            <h3 class="sub-title">Handling Disrespect (Cara Ngadepin Haters)</h3>
+            <p>Kalau ada yang ngejek atau ngeremehin lo di depan umum:</p>
+            
+            <div class="bg-red-50 p-4 border border-red-200 mb-4">
+                <p class="font-bold text-red-800">JANGAN:</p>
+                <p class="text-sm text-red-700 m-0">Marah, defensif, atau mukul meja. Itu tanda lo emosional (Lemah).</p>
+            </div>
+
+            <div class="bg-green-50 p-4 border border-green-200">
+                <p class="font-bold text-green-800">LAKUKAN:</p>
+                <ol class="list-decimal pl-4 text-sm text-green-700 space-y-1">
+                    <li>Tatap matanya dalem-dalem.</li>
+                    <li>Diem 3 detik (kasih jeda canggung).</li>
+                    <li>Tanya dengan nada datar: "Lo lagi coba ngelucu atau emang mau ngehina gue?"</li>
+                </ol>
+            </div>
+            
+            <p class="mt-4 text-sm italic">Apapun jawabannya, lo udah menang frame karena lo tenang dan berani konfrontasi tanpa emosi.</p>
+
+            <div class="page-number">14</div>
+            <div class="footer-logo">THE ARCHITECT</div>
+        </div>
+
+        <!-- ================= PAGE 14: ACTION PLAN ================= -->
+        <div class="page bg-white content-padding">
+             <h1 class="chapter-title text-cyan-700">ACTION PLAN:<br>MINGGU PERTAMA</h1>
+             
+             <img 
+                 src="assets/v4-action.jpg" 
+                 onerror="this.onerror=null; this.src='https://placehold.co/800x150/ecfeff/06b6d4?text=FILE+NEEDED:+assets/v4-action.jpg';"
+                 alt="Action Plan Header" 
+                 class="technical-img mb-8 border-none"
+             >
+
+             <div class="space-y-6 mt-8">
+                 <div class="flex items-start gap-4">
+                     <div class="bg-slate-900 text-white font-bold p-3 w-16 text-center rounded flex-shrink-0">DAY 1</div>
+                     <div class="p-4 bg-slate-50 border border-slate-200 flex-grow rounded">
+                         <p class="font-bold text-slate-900 mb-1">VOCAL</p>
+                         <p class="text-sm m-0">Rekam suara lo pas baca satu paragraf buku. Dengerin. Cempreng gak? Kecepetan gak? Lakuin Humming Drill.</p>
+                     </div>
+                 </div>
+
+                 <div class="flex items-start gap-4">
+                     <div class="bg-slate-900 text-white font-bold p-3 w-16 text-center rounded flex-shrink-0">DAY 2</div>
+                     <div class="p-4 bg-slate-50 border border-slate-200 flex-grow rounded">
+                         <p class="font-bold text-slate-900 mb-1">POSTURE</p>
+                         <p class="text-sm m-0">Pas jalan di kantor/kampus, bayangin ada tali yang narik kepala lo ke atas. Puter bahu ke belakang. Liat reaksi orang.</p>
+                     </div>
+                 </div>
+
+                 <div class="flex items-start gap-4">
+                     <div class="bg-slate-900 text-white font-bold p-3 w-16 text-center rounded flex-shrink-0">DAY 3</div>
+                     <div class="p-4 bg-slate-50 border border-slate-200 flex-grow rounded">
+                         <p class="font-bold text-slate-900 mb-1">SCENT</p>
+                         <p class="text-sm m-0">Beli 1 parfum Signature Scent yang berkualitas (cek rekomendasi di atas).</p>
+                     </div>
+                 </div>
+
+                 <div class="flex items-start gap-4">
+                     <div class="bg-cyan-600 text-white font-bold p-3 w-16 text-center rounded flex-shrink-0">DAY 4</div>
+                     <div class="p-4 bg-cyan-50 border border-cyan-200 flex-grow rounded">
+                         <p class="font-bold text-slate-900 mb-1">EYE CONTACT</p>
+                         <p class="text-sm m-0">Praktekin Eye Contact sama kasir minimarket atau pelayan kopi. Tatap mata, senyum, bilang makasih, dan jangan buang muka ke bawah.</p>
+                     </div>
+                 </div>
+             </div>
+
+             <div class="mt-12 text-center border-t border-slate-200 pt-8">
+                 <p class="text-xl md:text-2xl font-bold font-oswald text-slate-900">END OF VOLUME 4</p>
+                 <p class="text-slate-500 text-sm">Last: Volume 5 (Mindset & Routine).</p>
+             </div>
+             <div class="page-number">16</div>
+             <div class="footer-logo">THE ARCHITECT</div>
+        </div>
+
+    </div>
+</body>
+</html>
